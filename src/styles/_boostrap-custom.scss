@@ -1,0 +1,8 @@
+.container-fluid {
+	@include media("md") {
+		padding: 0 30px;
+	}
+	@include media("lg") {
+		padding: 0 100px;
+	}
+}

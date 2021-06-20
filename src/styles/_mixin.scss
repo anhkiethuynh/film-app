@@ -1,0 +1,65 @@
+@mixin useCenter($type: true) {
+	@if ($type) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	} @else {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@mixin flex($jc: center, $ai: center) {
+	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
+}
+
+@mixin translate($x: 0%, $y: 0%) {
+	transform: translate($x, $y);
+}
+@mixin scale($x: 0%, $y: 0%) {
+	transform: scale($x, $y);
+}
+
+@mixin setOverflow($line) {
+	display: -webkit-inline-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin size($width: 100%, $height: 100%) {
+	width: $width;
+	height: $height;
+}
+
+/* Responsive MOBILE FRIST USING MIN W */
+@mixin media($breakpoint) {
+	@media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+		@content;
+	}
+}
+
+@mixin minWidth($breakpoint) {
+	@media (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+/* Responsive DESKTOP FIRST*/
+
+@mixin mediaMax($breakpoint) {
+	@media (min-width: map-get($grid-breakpoints-max-widths, $breakpoint)) {
+		@content;
+	}
+}
+
+@mixin maxWidth($breakpoints) {
+	@media (max-width: $breakpoint) {
+		@content;
+	}
+}

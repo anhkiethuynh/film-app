@@ -1,0 +1,8 @@
+a {
+	text-decoration: none;
+	color: $text-cl;
+	&:visited {
+		color: unset;
+		text-decoration: none;
+	}
+}

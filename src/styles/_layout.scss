@@ -1,4 +1,37 @@
+* {
+	box-sizing: border-box;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+	::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+	::-webkit-scrollbar-thumb {
+		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+}
+
+:root {
+	/* global css variable */
+}
+
 html,
 body {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 	font-family: RobotoRegular;
+	@extend %fsz-16;
+}
+
+@import "./boostrap-custom";
+
+main {
+	margin-top: var(--heightHeader);
+	min-height: 100vh;
 }

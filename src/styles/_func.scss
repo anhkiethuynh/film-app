@@ -1,0 +1,20 @@
+@function rem($px) {
+	$remValue: $px / $fsz + rem;
+	@return $remValue;
+}
+
+@function opacity($color, $unit) {
+	@return rgba($color, $unit);
+}
+
+@for $i from 1 through $fsz-max {
+	%fsz-#{$i} {
+		font-size: rem($i);
+	}
+}
+
+@for $i from 0 through 9999 {
+	%z-index-#{$i} {
+		z-index: $i;
+	}
+}
