@@ -5,13 +5,14 @@ import "./header.style.scss";
 import { PAGE_PATH } from "../../constant/enum";
 import logo from "../../assets/images/logo.png";
 import search_icon from "../../assets/images/search.svg";
+import account_icon from "../../assets/images/user.png";
 import login_icon from "../../assets/images/sign-in-alt.svg";
 import register_icon from "../../assets/images/arrow-circle-right.svg";
 
 const Header = (props) => {
   return (
     <header className="header">
-      <div className="container">
+      <div className="container-fluid">
         <div className="outer">
           <Link to={`${PAGE_PATH.HOME}`}>
             <img src={logo} alt="" />
@@ -99,6 +100,7 @@ const Header = (props) => {
               </div>
             </div>
             <div className="account">
+              <img src={account_icon} alt="" />
               <ul className="account-wrapper">
                 <li className="account-item">
                   <Link to={PAGE_PATH.LOGIN_IN}>
